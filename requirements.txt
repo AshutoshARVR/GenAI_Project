@@ -1,0 +1,10 @@
+streamlit
+requests
+rdflib
+pandas
+chromadb
+sentence-transformers
+openpyxl               # If you want to support `.xlsx` Excel files
+neo4j                 # For loading/querying ontology in a graph DB
+langchain             # For more advanced GenAI pipelines
+python-dotenv         # For managing secrets/APIs (if using cloud LLMs)

@@ -1,0 +1,31 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.so
+
+# Virtual environment
+env/
+venv/
+.venv/
+EDP4E_GenAI/
+
+# Jupyter Notebook Checkpoints
+.ipynb_checkpoints/
+
+# PyCharm files
+.idea/
+*.iml
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# RDF data and vector DB (optional)
+graphdb/generated_data.rdf
+vector_store/
+
+# Streamlit secrets
+.streamlit/secrets.toml
