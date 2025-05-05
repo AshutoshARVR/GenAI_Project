@@ -1,32 +1,28 @@
-import os
 import requests
-from dotenv import load_dotenv
+import streamlit as st
 
-load_dotenv()
-TOGETHER_API_KEY = os.getenv("TOGETHER_API_KEY")
 
-def query_llama3(prompt, model="meta-llama/Llama-3-8b-chat-hf"):
-    url = "https://api.together.xyz/v1/chat/completions"
+def query_llama3(prompt: str) -> str:
+    api_key = st.secrets["TOGETHER_API_KEY"]
+    model = st.secrets.get("LLM_MODEL", "mistralai/Mixtral-8x7B-Instruct-v0.1")
+
     headers = {
-        "Authorization": f"Bearer {TOGETHER_API_KEY}",
+        "Authorization": f"Bearer {api_key}",
         "Content-Type": "application/json"
     }
+
     payload = {
         "model": model,
-        "messages": [
-            {"role": "system", "content": "You are a helpful assistant."},
-            {"role": "user", "content": prompt}
-        ],
-        "temperature": 0.7,
+        "prompt": prompt,
         "max_tokens": 512,
-        "top_p": 0.7,
-        "stop": None
+        "temperature": 0.7,
+        "top_p": 0.9,
+        "stop": ["</s>"]
     }
 
-    try:
-        response = requests.post(url, headers=headers, json=payload)
-        response.raise_for_status()
-        result = response.json()
-        return result["choices"][0]["message"]["content"]
-    except Exception as e:
-        return f"[❌ Together.ai Error] {str(e)}"
+    response = requests.post("https://api.together.xyz/v1/completions", headers=headers, json=payload)
+
+    if response.status_code == 200:
+        return response.json()["choices"][0]["text"].strip()
+    else:
+        return f"[❌ Error from Together.ai]\n{response.text}"

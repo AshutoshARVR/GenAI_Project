@@ -8,7 +8,7 @@ from rag_engine.query_engine import answer_question
 # Streamlit App Config
 st.set_page_config(page_title="EDP4E GenAI", page_icon="🧠", layout="wide")
 
-# Inject Miami Pink & London Blue Styling
+# Miami Pink & London Blue Styling
 st.markdown("""
     <style>
     body {
@@ -49,6 +49,7 @@ with col1:
 with col2:
     st.title("EDP4E Semantic GenAI Assistant")
     st.markdown("Ask questions about assets, engineers, or test data sources.")
+    st.markdown("**🤖 Model: Mixtral-8x7B via Together.ai API**")
 
 # Chat state
 if "chat_history" not in st.session_state:
@@ -92,3 +93,12 @@ if st.session_state.chat_history:
             st.markdown("### 🧾 Top Supporting Facts")
             for fact, score in entry["facts"]:
                 st.markdown(f"- **({round(score, 3)})** {fact}")
+
+# Footer
+st.markdown("---")
+st.markdown(
+    "<div style='text-align: center; color: #FF5CA2;'>"
+    "🚀 Powered by <b>Together.ai</b> using Mixtral-8x7B"
+    "</div>",
+    unsafe_allow_html=True
+)
