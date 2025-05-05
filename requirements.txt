@@ -1,9 +1,10 @@
 streamlit
 requests
-python-dotenv
 rdflib
 pandas
 chromadb
 sentence-transformers
 openpyxl
 protobuf==3.20.3
+torch==2.0.1+cpu
+-f https://download.pytorch.org/whl/torch_stable.html
