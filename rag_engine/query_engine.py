@@ -4,6 +4,7 @@ from sentence_transformers import SentenceTransformer
 from chromadb import Client
 from chromadb.config import Settings
 import streamlit as st
+
 # Step 1: Semantic retrieval of top-k facts using ChromaDB + scores
 def retrieve_relevant_facts(question, top_k=5):
     @st.cache_resource
@@ -15,7 +16,14 @@ def retrieve_relevant_facts(question, top_k=5):
 
     base_dir = os.path.dirname(os.path.dirname(__file__))
     chroma_dir = os.path.join(base_dir, "vector_store")
-    client = Client(Settings(anonymized_telemetry=False))
+
+    # ✅ Use DuckDB to avoid sqlite3 version errors
+    client = Client(Settings(
+        chroma_db_impl="duckdb+parquet",
+        persist_directory=chroma_dir,
+        anonymized_telemetry=False
+    ))
+
     collection = client.get_or_create_collection("context_facts")
 
     results = collection.query(
@@ -26,7 +34,6 @@ def retrieve_relevant_facts(question, top_k=5):
 
     docs = results["documents"][0]
     distances = results["distances"][0]
-    # Convert distance to similarity (1 - distance)
     scored_facts = [(doc, round(1 - dist, 3)) for doc, dist in zip(docs, distances)]
     return scored_facts
 
