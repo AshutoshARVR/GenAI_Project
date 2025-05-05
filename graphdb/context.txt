@@ -1,0 +1,91 @@
+PowerElectronics Team is a Team.
+TestAsset has MaximumOperatingTime 168.
+ProductiveOperatingTimeInstance has RecordedIn OBS.
+TestOperator is a Engineer.
+Equals is a ObjectProperty.
+Standards is a Class.
+ProductiveOperatingTimeInstance has RecordedIn SharePoint.
+Facility has Contains TestAsset.
+ReqManagementTool is a Class.
+ProductiveOperatingTime has domain TestAsset.
+MaximumOperatingTime has range duration.
+ProductiveOperatingTimeInstance has RecordedIn BigQuery.
+DART is a TestManagementSoftware.
+XRay is a TestManagementSoftware.
+AutomatedTesting is a TestingType.
+SharePoint is a TestManagementSoftware.
+TestAsset has ProductiveOperatingTime ProductiveOperatingTimeInstance.
+ProductiveOperatingTimeInstance has RecordedIn Ciara.
+Rig is a TestAsset.
+TestAsset has Records TAMS.
+NorthStarKeyWord is a ObjectProperty.
+TestRequest is a Class.
+TestManagementSoftware is a Class.
+Rig02 has MaximumOperatingTime 168.
+TeamWorkspace is a Class.
+PlannedDowntime is a TimeCategory.
+Rig01 is a TestAsset.
+Ciara is a TestManagementSoftware.
+Engineer is a Class.
+Facility has Records TestAsset.
+AutomationEngineer is a Engineer.
+Jira is a TestManagementSoftware.
+Alice Sharma is a Engineer.
+Contains is a ObjectProperty.
+ProductDefect is a Class.
+MaximumOperatingTime is a DatatypeProperty.
+Lucid is a TeamWorkspace.
+AIMS SIMS is a ProductDefect.
+DataOwner is a ObjectProperty.
+Rig02 has DataOwner FacilityEngineer.
+NonValueAddTime is a TimeCategory.
+Alice Sharma has EngineerType TestEngineer.
+Charlie Singh has EngineerType DVEngineer.
+Wrike is a TestManagementSoftware.
+TestFacility is a Class.
+TimeCategory is a Class.
+TAMS is a TestManagementSoftware.
+MaximumOperatingTime has domain TestAsset.
+Rig01 has ProductiveOperatingTime 120.
+Rig02 has ProductiveOperatingTime 90.
+ManualTesting is a TestingType.
+DVEngineer is a Engineer.
+FacilityEngineer is a Engineer.
+Rig02 is a TestAsset.
+EssentialValueAdd is a TimeCategory.
+ProductiveOperatingTimeInstance has Contains PlannedDowntime.
+Doors is a ReqManagementTool.
+Facility is a Class.
+EssentialNonValueAdd is a TimeCategory.
+RecordedIn is a ObjectProperty.
+FAMS is a Facility.
+ProductiveOperatingTime has range duration.
+TRM is a ReqManagementTool.
+ISO26262 is a Standards.
+Bob Patel is a Engineer.
+ProductiveOperatingTimeInstance has Contains EssentialNonValueAdd.
+IAM is a TestManagementSoftware.
+TestFacility is a TestFacility.
+Excel CSV is a TestManagementSoftware.
+Bob Patel has EngineerType AutomationEngineer.
+DataSource is a ObjectProperty.
+Programme is a TestManagementSoftware.
+ProductiveOperatingTimeInstance has RecordedIn Excel CSV.
+Confluence is a TeamWorkspace.
+TestResult is a Class.
+TestingType is a Class.
+OBS is a TestManagementSoftware.
+Tall is a TestManagementSoftware.
+TestAsset is a Class.
+ProductiveOperatingTimeInstance has RecordedIn Tall.
+ProductiveOperatingTimeInstance has Contains EssentialValueAdd.
+BigQuery is a TestManagementSoftware.
+Charlie Singh is a Engineer.
+TestEngineer is a Engineer.
+Rig01 has MaximumOperatingTime 168.
+Team is a Class.
+Rig01 has DataOwner TestEngineer.
+http://example.org/ontology is a Ontology.
+ProductiveOperatingTimeInstance has RecordedIn Wrike.
+ProductiveOperatingTime is a DatatypeProperty.
+Records is a ObjectProperty.

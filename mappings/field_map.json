@@ -1,0 +1,12 @@
+{
+  "TestAsset": {
+    "RigID": "individual_name",
+    "MaxOperatingTime": "MaximumOperatingTime",
+    "ProductiveTime": "ProductiveOperatingTime",
+    "User": "DataOwner"
+  },
+  "Engineer": {
+    "EngineerName": "individual_name",
+    "EngineerType": "EngineerType"
+  }
+}

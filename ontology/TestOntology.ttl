@@ -1,0 +1,116 @@
+@prefix : <http://example.org/ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://example.org/ontology> rdf:type owl:Ontology .
+
+### Classes
+:ReqManagementTool rdf:type owl:Class .
+:TestManagementSoftware rdf:type owl:Class .
+:TestRequest rdf:type owl:Class .
+:TestResult rdf:type owl:Class .
+:TestingType rdf:type owl:Class .
+:TeamWorkspace rdf:type owl:Class .
+:ProductDefect rdf:type owl:Class .
+:Team rdf:type owl:Class .
+:TestFacility rdf:type owl:Class .
+:TestAsset rdf:type owl:Class .
+:Engineer rdf:type owl:Class .
+:Standards rdf:type owl:Class .
+:Facility rdf:type owl:Class .
+:TimeCategory rdf:type owl:Class .
+
+### Object Properties (Relationships)
+:DataSource rdf:type owl:ObjectProperty .
+:DataOwner rdf:type owl:ObjectProperty .
+:Contains rdf:type owl:ObjectProperty .
+:Equals rdf:type owl:ObjectProperty .
+:NorthStarKeyWord rdf:type owl:ObjectProperty .
+:Records rdf:type owl:ObjectProperty .
+:RecordedIn rdf:type owl:ObjectProperty .
+
+### Data Properties
+:MaximumOperatingTime rdf:type owl:DatatypeProperty ;
+   rdfs:domain :TestAsset ;
+   rdfs:range xsd:duration .
+
+:ProductiveOperatingTime rdf:type owl:DatatypeProperty ;
+   rdfs:domain :TestAsset ;
+   rdfs:range xsd:duration .
+
+### Individuals (Instances)
+
+# ReqManagementTool Instances
+:Doors rdf:type :ReqManagementTool .
+:TRM rdf:type :ReqManagementTool .
+
+# TestManagementSoftware Instances
+:Wrike rdf:type :TestManagementSoftware .
+:OBS rdf:type :TestManagementSoftware .
+:DART rdf:type :TestManagementSoftware .
+:Ciara rdf:type :TestManagementSoftware .
+:Jira rdf:type :TestManagementSoftware .
+:TAMS rdf:type :TestManagementSoftware .
+:XRay rdf:type :TestManagementSoftware .
+:Excel_CSV rdf:type :TestManagementSoftware .
+:IAM rdf:type :TestManagementSoftware .
+:SharePoint rdf:type :TestManagementSoftware .
+:Tall rdf:type :TestManagementSoftware .
+:Programme rdf:type :TestManagementSoftware .
+:BigQuery rdf:type :TestManagementSoftware .
+
+# Testing Type
+:AutomatedTesting rdf:type :TestingType .
+:ManualTesting rdf:type :TestingType .
+
+# Team Workspace
+:Confluence rdf:type :TeamWorkspace .
+:Lucid rdf:type :TeamWorkspace .
+
+# Product Defect System
+:AIMS_SIMS rdf:type :ProductDefect .
+
+# Teams
+:PowerElectronics_Team rdf:type :Team .
+
+# Test Facility
+:TestFacility rdf:type :TestFacility .
+
+# Test Asset
+:Rig rdf:type :TestAsset .
+
+# Engineers
+:TestEngineer rdf:type :Engineer .
+:AutomationEngineer rdf:type :Engineer .
+:TestOperator rdf:type :Engineer .
+:FacilityEngineer rdf:type :Engineer .
+:DVEngineer rdf:type :Engineer .
+
+# Standards
+:ISO26262 rdf:type :Standards .
+
+# Facility System
+:FAMS rdf:type :Facility .
+
+# Time Categories
+:EssentialNonValueAdd rdf:type :TimeCategory .
+:PlannedDowntime rdf:type :TimeCategory .
+:EssentialValueAdd rdf:type :TimeCategory .
+:NonValueAddTime rdf:type :TimeCategory .
+
+### Relationships
+
+:Facility :Records :TestAsset .
+:Facility :Contains :TestAsset .
+:TestAsset :Records :TAMS .
+:TestAsset :MaximumOperatingTime "168"^^xsd:integer .
+:TestAsset :ProductiveOperatingTime :ProductiveOperatingTimeInstance .
+
+# Recording sources for POT
+:ProductiveOperatingTimeInstance :RecordedIn :OBS , :Tall , :Excel_CSV , :SharePoint , :Ciara , :BigQuery , :Wrike .
+
+# Decomposing Productive Operating Time
+:ProductiveOperatingTimeInstance :Contains :EssentialNonValueAdd , :PlannedDowntime , :EssentialValueAdd .

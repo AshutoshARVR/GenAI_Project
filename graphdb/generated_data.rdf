@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:ex="http://example.org/ontology#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <rdf:Description rdf:about="http://example.org/ontology#DART">
+    <rdf:type rdf:resource="http://example.org/ontology#TestManagementSoftware"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#Charlie_Singh">
+    <rdf:type rdf:resource="http://example.org/ontology#Engineer"/>
+    <ex:EngineerType>DVEngineer</ex:EngineerType>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#DVEngineer">
+    <rdf:type rdf:resource="http://example.org/ontology#Engineer"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#Facility">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <ex:Records rdf:resource="http://example.org/ontology#TestAsset"/>
+    <ex:Contains rdf:resource="http://example.org/ontology#TestAsset"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#Rig02">
+    <rdf:type rdf:resource="http://example.org/ontology#TestAsset"/>
+    <ex:MaximumOperatingTime rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">168</ex:MaximumOperatingTime>
+    <ex:ProductiveOperatingTime rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">90</ex:ProductiveOperatingTime>
+    <ex:DataOwner>FacilityEngineer</ex:DataOwner>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#EssentialNonValueAdd">
+    <rdf:type rdf:resource="http://example.org/ontology#TimeCategory"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#SharePoint">
+    <rdf:type rdf:resource="http://example.org/ontology#TestManagementSoftware"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#Tall">
+    <rdf:type rdf:resource="http://example.org/ontology#TestManagementSoftware"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#ProductiveOperatingTime">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#TestAsset"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#duration"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#TestingType">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#TeamWorkspace">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#Wrike">
+    <rdf:type rdf:resource="http://example.org/ontology#TestManagementSoftware"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#AutomatedTesting">
+    <rdf:type rdf:resource="http://example.org/ontology#TestingType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#Lucid">
+    <rdf:type rdf:resource="http://example.org/ontology#TeamWorkspace"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#Confluence">
+    <rdf:type rdf:resource="http://example.org/ontology#TeamWorkspace"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#RecordedIn">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#ProductiveOperatingTimeInstance">
+    <ex:RecordedIn rdf:resource="http://example.org/ontology#OBS"/>
+    <ex:RecordedIn rdf:resource="http://example.org/ontology#Tall"/>
+    <ex:RecordedIn rdf:resource="http://example.org/ontology#Excel_CSV"/>
+    <ex:RecordedIn rdf:resource="http://example.org/ontology#SharePoint"/>
+    <ex:RecordedIn rdf:resource="http://example.org/ontology#Ciara"/>
+    <ex:RecordedIn rdf:resource="http://example.org/ontology#BigQuery"/>
+    <ex:RecordedIn rdf:resource="http://example.org/ontology#Wrike"/>
+    <ex:Contains rdf:resource="http://example.org/ontology#EssentialNonValueAdd"/>
+    <ex:Contains rdf:resource="http://example.org/ontology#PlannedDowntime"/>
+    <ex:Contains rdf:resource="http://example.org/ontology#EssentialValueAdd"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#Excel_CSV">
+    <rdf:type rdf:resource="http://example.org/ontology#TestManagementSoftware"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#AIMS_SIMS">
+    <rdf:type rdf:resource="http://example.org/ontology#ProductDefect"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#Contains">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#TestAsset">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <ex:Records rdf:resource="http://example.org/ontology#TAMS"/>
+    <ex:MaximumOperatingTime rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">168</ex:MaximumOperatingTime>
+    <ex:ProductiveOperatingTime rdf:resource="http://example.org/ontology#ProductiveOperatingTimeInstance"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#Alice_Sharma">
+    <rdf:type rdf:resource="http://example.org/ontology#Engineer"/>
+    <ex:EngineerType>TestEngineer</ex:EngineerType>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#ManualTesting">
+    <rdf:type rdf:resource="http://example.org/ontology#TestingType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#Standards">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#Doors">
+    <rdf:type rdf:resource="http://example.org/ontology#ReqManagementTool"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#TimeCategory">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#DataSource">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#Equals">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#MaximumOperatingTime">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://example.org/ontology#TestAsset"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#duration"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#Bob_Patel">
+    <rdf:type rdf:resource="http://example.org/ontology#Engineer"/>
+    <ex:EngineerType>AutomationEngineer</ex:EngineerType>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#Records">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#TestManagementSoftware">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#NorthStarKeyWord">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#ReqManagementTool">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#ProductDefect">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#Rig01">
+    <rdf:type rdf:resource="http://example.org/ontology#TestAsset"/>
+    <ex:MaximumOperatingTime rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">168</ex:MaximumOperatingTime>
+    <ex:ProductiveOperatingTime rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">120</ex:ProductiveOperatingTime>
+    <ex:DataOwner>TestEngineer</ex:DataOwner>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#FacilityEngineer">
+    <rdf:type rdf:resource="http://example.org/ontology#Engineer"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#FAMS">
+    <rdf:type rdf:resource="http://example.org/ontology#Facility"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#BigQuery">
+    <rdf:type rdf:resource="http://example.org/ontology#TestManagementSoftware"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#TRM">
+    <rdf:type rdf:resource="http://example.org/ontology#ReqManagementTool"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#DataOwner">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#Engineer">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#Ciara">
+    <rdf:type rdf:resource="http://example.org/ontology#TestManagementSoftware"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#XRay">
+    <rdf:type rdf:resource="http://example.org/ontology#TestManagementSoftware"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#PlannedDowntime">
+    <rdf:type rdf:resource="http://example.org/ontology#TimeCategory"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#Programme">
+    <rdf:type rdf:resource="http://example.org/ontology#TestManagementSoftware"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#TestEngineer">
+    <rdf:type rdf:resource="http://example.org/ontology#Engineer"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#TestFacility">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdf:type rdf:resource="http://example.org/ontology#TestFacility"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#OBS">
+    <rdf:type rdf:resource="http://example.org/ontology#TestManagementSoftware"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#ISO26262">
+    <rdf:type rdf:resource="http://example.org/ontology#Standards"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#AutomationEngineer">
+    <rdf:type rdf:resource="http://example.org/ontology#Engineer"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#TestOperator">
+    <rdf:type rdf:resource="http://example.org/ontology#Engineer"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#PowerElectronics_Team">
+    <rdf:type rdf:resource="http://example.org/ontology#Team"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#TestResult">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#TAMS">
+    <rdf:type rdf:resource="http://example.org/ontology#TestManagementSoftware"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#EssentialValueAdd">
+    <rdf:type rdf:resource="http://example.org/ontology#TimeCategory"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#Jira">
+    <rdf:type rdf:resource="http://example.org/ontology#TestManagementSoftware"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#Team">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#IAM">
+    <rdf:type rdf:resource="http://example.org/ontology#TestManagementSoftware"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#TestRequest">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#NonValueAddTime">
+    <rdf:type rdf:resource="http://example.org/ontology#TimeCategory"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ontology#Rig">
+    <rdf:type rdf:resource="http://example.org/ontology#TestAsset"/>
+  </rdf:Description>
+</rdf:RDF>
