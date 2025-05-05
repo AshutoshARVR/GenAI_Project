@@ -3,8 +3,9 @@ requests
 rdflib
 pandas
 chromadb
-sentence-transformers
 openpyxl
 protobuf==3.20.3
-torch==2.0.1+cpu
--f https://download.pytorch.org/whl/torch_stable.html
+numpy<2.0.0
+torch==2.1.2
+transformers==4.36.2
+sentence-transformers==2.2.2
