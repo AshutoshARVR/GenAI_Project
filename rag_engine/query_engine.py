@@ -1,7 +1,8 @@
 import os
 from llm_utils.ollama_api import query_llama3
 from sentence_transformers import SentenceTransformer
-from chromadb import PersistentClient
+from chromadb import Client
+from chromadb.config import Settings
 import streamlit as st
 # Step 1: Semantic retrieval of top-k facts using ChromaDB + scores
 def retrieve_relevant_facts(question, top_k=5):
@@ -14,7 +15,7 @@ def retrieve_relevant_facts(question, top_k=5):
 
     base_dir = os.path.dirname(os.path.dirname(__file__))
     chroma_dir = os.path.join(base_dir, "vector_store")
-    client = PersistentClient(path=chroma_dir)
+    client = Client(Settings(anonymized_telemetry=False))
     collection = client.get_or_create_collection("context_facts")
 
     results = collection.query(
